@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="kyotu.css">
+    <link rel="stylesheet" href="body_temperature.css">
+    <title>メインメニュー</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="main">
+                <h2 class="main-title">体温報告</h2>
+
+                <div class="page">
+                    <!-- 前日 -->
+                    <a href="javascript:previous_date.submit()" class="previous-page">
+                        <u>＜</u>
+                    </a>
+                    <span>
+                        <?php echo $html_today . "({$week_name[$week]})"; ?>
+                    </span>
+                    <!-- 翌日 -->
+                    <a href="javascript:next_date.submit()" class="next-page">
+                        <u>＞</u>
+                    </a>
+                </div>
+                <!-- 前日フォーム -->
+                <form method="post" name="previous_date" action="index.php">
+                    <input type="hidden" name="paging" value="previous">
+                    <input type="hidden" name="date" value="<?php echo $html_today; ?>">
+                </form>
+                <!-- 翌日フォーム -->
+                <form method="post" name="next_date" action="index.php">
+                    <input type="hidden" name="paging" value="next">
+                    <input type="hidden" name="date" value="<?php echo $html_today; ?>">
+                </form>
+
+                <p class="result-report">
+                    <!-- TODO: テーブルからデータ取得 -->
+                    全ＸX人中ＸX人が報告済み
+                </p>
+
+
+                <!-- TODO: テーブルからデータ取得 -->
+                <div class="unreported-table">
+                    <h5>未報告者</h5>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>名前を入れる</td>
+                            </tr>
+                            <tr>
+                                <td>名前を入れる</td>
+                            </tr>
+                            <tr>
+                                <td>名前を入れる</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <!-- TODO: テーブルからデータ取得 -->
+                <div class="report-table">
+                    <h5>報告者</h5>
+                    <p>①体温　②せきの有無　③倦怠感の有無　④味覚嗅覚異常の有無</p>
+                    <table>
+                        <tbody>
+                            <tr><td>名前</td><td>時間</td><td>メッセージ</td></tr>
+                            <tr><td>名前</td><td>時間</td><td>メッセージ</td></tr>
+                            <tr><td>名前</td><td>時間</td><td>メッセージ</td></tr>
+                            <tr><td>名前</td><td>時間</td><td>メッセージ</td></tr>
+                            <tr><td>名前</td><td>時間</td><td>メッセージ</td></tr>
+                            <tr><td>名前</td><td>時間</td><td>メッセージ</td></tr>
+                            <tr><td>名前</td><td>時間</td><td>メッセージ</td></tr>
+                            <tr><td>名前</td><td>時間</td><td>メッセージ</td></tr>
+                            <tr><td>名前</td><td>時間</td><td>メッセージ</td></tr>
+                            <tr><td>名前</td><td>時間</td><td>メッセージ</td></tr>
+                            <tr><td>名前</td><td>時間</td><td>メッセージ</td></tr>
+                            <tr><td>名前</td><td>時間</td><td>メッセージ</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
